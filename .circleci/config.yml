@@ -45,7 +45,7 @@ jobs:
         - node-deps-{{ arch }}-v1-{{ .Branch }}-{{ checksum "/tmp/node-project-package.json" }}-
         - node-deps-{{ arch }}-v1-{{ .Branch }}-
     - run:
-        command: "if [[ ! -z \"\" ]]; then\n  echo \"Running override package installation command:\"\n  \nelse\n  npm ci\nfi\n"
+        command: npm i
         name: Installing NPM packages
         working_directory: ~/project
     - save_cache:
